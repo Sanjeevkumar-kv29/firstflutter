@@ -18,7 +18,7 @@ class Homepaget1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.green,
-      child: Text('tatti'),
+      child: Text('hello flutter'),
     );
   }
 }
@@ -29,7 +29,7 @@ class Homepaget2 extends StatelessWidget {
     return Scaffold(
       //Scaffold give appbar to us.
       appBar: AppBar(
-        title: Text('tatti flutter'),
+        title: Text('hello flutter'),
       ),
 
       body: Center(
@@ -50,7 +50,7 @@ class Homepaget2 extends StatelessWidget {
                   blurRadius: 10,
                 )
               ]),
-          child: Text('TattiXD lolo',
+          child: Text('hello lolo',
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
