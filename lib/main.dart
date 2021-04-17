@@ -33,28 +33,30 @@ class Homepaget2 extends StatelessWidget {
       ),
 
       body: Center(
-        child: Container(
-          padding: const EdgeInsets.all(10),
-          //color: Colors.pink, // Coz box decoration also have Color property so that we can use it only at once
-          width: 100,
-          height: 100,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-              color: Colors.teal,
-              //shape: BoxShape.circle
-              borderRadius: BorderRadius.circular(10),
-              gradient: LinearGradient(colors: [Colors.black, Colors.white]),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black,
-                  blurRadius: 10,
-                )
-              ]),
-          child: Text('hello lolo',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold)),
+        child: Row(
+          // similar for Column
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              padding: const EdgeInsets.all(10),
+              width: 100,
+              height: 100,
+              color: Colors.blue,
+            ),
+            Container(
+              padding: const EdgeInsets.all(10),
+              width: 100,
+              height: 100,
+              color: Colors.green,
+            ),
+            Container(
+              padding: const EdgeInsets.all(10),
+              width: 100,
+              height: 100,
+              color: Colors.yellow,
+            )
+          ],
         ),
       ),
     );
