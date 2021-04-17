@@ -5,6 +5,7 @@ void main() {
   runApp(MaterialApp(
     home: Homepaget2(),
     theme: ThemeData(primarySwatch: Colors.grey),
+
     /*home: Container(
       color: Colors.teal,
       child: Text('lolo flutter'),
@@ -26,12 +27,35 @@ class Homepaget2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //Scaffold give appbar to us so we use it for appbar
+      //Scaffold give appbar to us.
       appBar: AppBar(
-        title: Text('tattiflutter'),
+        title: Text('tatti flutter'),
       ),
-      body: Container(
-        child: Text('TattiXD'),
+
+      body: Center(
+        child: Container(
+          padding: const EdgeInsets.all(10),
+          //color: Colors.pink, // Coz box decoration also have Color property so that we can use it only at once
+          width: 100,
+          height: 100,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+              color: Colors.teal,
+              //shape: BoxShape.circle
+              borderRadius: BorderRadius.circular(10),
+              gradient: LinearGradient(colors: [Colors.black, Colors.white]),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black,
+                  blurRadius: 10,
+                )
+              ]),
+          child: Text('TattiXD lolo',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold)),
+        ),
       ),
     );
   }
