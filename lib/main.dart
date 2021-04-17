@@ -33,32 +33,48 @@ class Homepaget2 extends StatelessWidget {
       ),
 
       body: Center(
-        child: Row(
-          // similar for Column
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
+        child: Container(
+          width: 100,
+          height: 100,
+          color: Colors.teal,
+        ),
+      ),
+
+      drawer: Drawer(
+        child: ListView(
+          padding: const EdgeInsets.all(0),
           children: [
-            Container(
-              padding: const EdgeInsets.all(10),
-              width: 100,
-              height: 100,
-              color: Colors.blue,
+            /*DrawerHeader(
+              child: Text('hello'),
+              decoration: BoxDecoration(color: Colors.grey),
+            ),*/
+            UserAccountsDrawerHeader(
+              accountName: Text('name'),
+              accountEmail: Text('email@email.email'),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage(
+                    'https://netstorage-legit.akamaized.net/images/vllkyt1uc3jd8n61v8.jpg'),
+              ),
             ),
-            Container(
-              padding: const EdgeInsets.all(10),
-              width: 100,
-              height: 100,
-              color: Colors.green,
-            ),
-            Container(
-              padding: const EdgeInsets.all(10),
-              width: 100,
-              height: 100,
-              color: Colors.yellow,
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text('niceflutter'),
+              subtitle: Text('hola hola hola'),
+              onTap: () {},
             )
           ],
         ),
       ),
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Colors.black,
+        child: Icon(
+          Icons.search,
+          color: Colors.white,
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
