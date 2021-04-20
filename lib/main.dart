@@ -25,7 +25,16 @@ class Homepaget1 extends StatelessWidget {
   }
 }
 
-class Homepaget2 extends StatelessWidget {
+// converted statefull widget coz we want to change some data dynamicaally in text feild
+class Homepaget2 extends StatefulWidget {
+  @override
+  _Homepaget2State createState() => _Homepaget2State();
+}
+
+class _Homepaget2State extends State<Homepaget2> {
+  var displaytext = 'I love you dude';
+  TextEditingController txtcntroler = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,18 +55,18 @@ class Homepaget2 extends StatelessWidget {
                     "assets/img1.jpg",
                     fit: BoxFit.cover,
                   ),
-
                   SizedBox(height: 20),
-                  Text('hola lola',style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+                  Text(displaytext, //'hola lola',
+                      style:
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
                   Padding(
                     padding: const EdgeInsets.all(10),
                     child: TextField(
+                      controller: txtcntroler,
                       decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        hintText: 'Text feild',
-                        labelText: 'textfeild'
-                      ),
-
+                          border: OutlineInputBorder(),
+                          hintText: 'Text feild',
+                          labelText: 'textfeild'),
                     ),
                   )
                 ],
@@ -94,10 +103,14 @@ class Homepaget2 extends StatelessWidget {
       ),
 
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          displaytext = txtcntroler.text;
+
+          setState(() {});
+        },
         backgroundColor: Colors.black,
         child: Icon(
-          Icons.search,
+          Icons.send,
           color: Colors.white,
         ),
       ),
