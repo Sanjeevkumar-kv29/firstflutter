@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -28,15 +30,40 @@ class Homepaget2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       //Scaffold give appbar to us.
+      backgroundColor: Colors.grey,
       appBar: AppBar(
         title: Text('hello flutter'),
       ),
 
       body: Center(
-        child: Container(
-          width: 100,
-          height: 100,
-          color: Colors.teal,
+        child: Padding(
+          padding: const EdgeInsets.all(10),
+          child: SingleChildScrollView(
+            child: Card(
+              child: Column(
+                children: [
+                  Image.asset(
+                    "assets/img1.jpg",
+                    fit: BoxFit.cover,
+                  ),
+
+                  SizedBox(height: 20),
+                  Text('hola lola',style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: 'Text feild',
+                        labelText: 'textfeild'
+                      ),
+
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
         ),
       ),
 
